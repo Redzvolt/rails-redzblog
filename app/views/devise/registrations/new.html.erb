@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2>S'inscrire</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -9,20 +9,20 @@
   </div>
 
   <div class="field">
-    <p><%= f.label :password %></p>
+    <p><%= f.label :password, "Mot de passe" %></p>
     <% if @minimum_password_length %>
       <p><em>(<%= @minimum_password_length %> characters minimum)</em></p>
     <% end %>
-    <p><%= f.password_field :password, autocomplete: "new-password" %></p>
+    <p><%= f.password_field :password, autocomplete: "Mot de passe" %></p>
   </div>
 
   <div class="field">
-    <p><%= f.label :password_confirmation %></p>
-    <p><%= f.password_field :password_confirmation, autocomplete: "new-password" %></p>
+    <p><%= f.label :password_confirmation, "Confirmez votre mot de passe" %></p>
+    <p><%= f.password_field :password_confirmation, autocomplete: "Mot de passe" %></p>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "S'inscrire" %>
   </div>
 <% end %>
 

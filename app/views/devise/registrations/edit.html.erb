@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Editer <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -13,8 +13,8 @@
   <% end %>
 
   <div class="field">
-    <p><%= f.label :password %> <i>(leave blank if you don't want to change it)</i></p>
-    <p><%= f.password_field :password, autocomplete: "new-password" %></p>
+    <p><%= f.label :password, "Mot de passe" %> <i>(Laisser vide si vous ne souhaitez pas le modifier)</i></p>
+    <p><%= f.password_field :password, autocomplete: "Nouveau mot de passe" %></p>
     <% if @minimum_password_length %>
       <p><em><%= @minimum_password_length %> characters minimum</em></p>
     <% end %>
@@ -22,12 +22,12 @@
 
   <div class="field">
     <p><%= f.label :password_confirmation %></p>
-    <p><%= f.password_field :password_confirmation, autocomplete: "new-password" %></p>
+    <p><%= f.password_field :password_confirmation, autocomplete: "Nouveau mot de passe" %></p>
   </div>
 
   <div class="field">
-    <p><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i></p>
-    <p><%= f.password_field :current_password, autocomplete: "current-password" %></p>
+    <p><%= f.label :current_password %> <i>(Rentrez votre mot de passe actuel pour confirmer le nouveau mot de passe)</i></p>
+    <p><%= f.password_field :current_password, autocomplete: "Mot de passe actuel" %></p>
   </div>
 
   <div class="actions">
