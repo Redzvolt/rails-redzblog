@@ -1,0 +1,72 @@
+<main class="p-4 d-flex flex-column align-items-center gap-4">
+  <h1>Redzblog</h1>
+  <p>Votre blog référence en science et culture</p>
+  <section class="text-center d-flex flex-column gap-4">
+    <h2>Une sélection de nos articles</h2>
+      <div class="d-flex flex-wrap gap-4 justify-content-center">
+        <% @articles.each do |article| %>
+          <div class="card text-center p-4" style="width: 30rem;">
+            <h3><%= article.title %></h3>
+            <%= image_tag("#{article.main_image}", alt: "#{article.main_image_description}" ) %>
+            <p><%= article.overview %></p>
+            <div class="d-flex justify-content-between">
+              <%= link_to "Lire l'article", articles_show_path(article.id) %>
+              <p><%= article.category %></p>
+            </div>
+          </div>
+        <% end %>
+        <div class="card text-center p-4" style="width: 29rem;">
+          <h2>Test</h2>
+          <%= image_tag("", alt: "image test" ) %>
+          <p>ce contenu sert de test pour la page</p>
+          <div class="d-flex justify-content-between">
+            <%= link_to "Lire l'article", articles_show_path(0) %>
+            <p>Technologies</p>
+          </div>
+        </div>
+        <div class="card text-center p-4" style="width: 29rem;">
+          <h2>Test</h2>
+          <%= image_tag("", alt: "image test" ) %>
+          <p>ce contenu sert de test pour la page</p>
+          <div class="d-flex justify-content-between">
+            <%= link_to "Lire l'article", articles_show_path(0) %>
+            <p>Technologies</p>
+          </div>
+        </div>
+        <div class="card text-center p-4" style="width: 29rem;">
+          <h2>Test</h2>
+          <%= image_tag("", alt: "image test" ) %>
+          <p>ce contenu sert de test pour la page</p>
+          <div class="d-flex justify-content-between">
+            <%= link_to "Lire l'article", articles_show_path(0) %>
+            <p>Technologies</p>
+          </div>
+        </div>
+      </div>
+    <%= link_to "Voir tous les articles", articles_index_path %>
+  </section>
+  <section class="text-center d-flex flex-column gap-4">
+    <h2>Une sélection des dernières actualités</h2>
+    <div class="d-flex flex-wrap gap-4 justify-content-center">
+      <% @actualites.each do |actualite| %>
+        <div class="card p-4" style="width: 30rem;">
+          <h2><%= actualite.title %></h2>
+          <%= image_tag("#{actualite.main_image}", alt: "#{actualite.main_image_description}" ) %>
+        </div>
+      <% end %>
+      <div class="card p-4" style="width: 29rem;">
+        <h3>Test</h3>
+        <%= link_to image_tag("", alt: "test" ), actualites_index_path %>
+      </div>
+      <div class="card p-4" style="width: 29rem;">
+        <h3>Test</h3>
+        <%= link_to image_tag("", alt: "test" ), actualites_index_path %>
+      </div>
+      <div class="card p-4" style="width: 29rem;">
+        <h3>Test</h3>
+        <%= link_to image_tag("", alt: "test" ), actualites_index_path %>
+      </div>
+    </div>
+    <%= link_to "Voir toutes les actualités", actualites_index_path %>
+  </section>
+</main>

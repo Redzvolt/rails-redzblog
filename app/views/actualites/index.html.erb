@@ -1,0 +1,50 @@
+<main class="p-4 d-flex flex-column align-items-center gap-4 text-center">
+  <h1>Dernières actualités</h1>
+  <p>Voici les dernières actualités</p>
+  <% @actualites.each do |actus| %>
+  <div class="card text-center p-4 d-flex flex-row gap-4" style="width: 90rem;">
+    <%= image_tag("#{actus.image_url}", alt: "#{actus.image_url_description}" ) %>
+    <div class="text-start">
+      <h2><%= actus.title %></h2>
+      <% if actus.end_date == nil %>
+        <p>Le : <%= actus.start_date %></p>
+      <% else %>
+        <p>Du : <%= actus.start_date %></p>
+        <p>Au : <%= actus.end_date %></p>
+      <% end %>
+      <p>Lieu : <%= actus.addres %></p>
+      <p><%= actus.overview %></p>
+    </div>
+  </div>
+  <% end %>
+  <div class="card text-center p-4 d-flex flex-row gap-4" style="width: 90rem;">
+    <%= image_tag("", alt: "test", class: "img-fluid rounded-start " ) %>
+    <div class="text-start">
+      <h2>Test</h2>
+      <p>Du :</p>
+      <p>Au :</p>
+      <p>Addresse : </p>
+      <p>Ce test sert à vérifier la page</p>
+    </div>
+  </div>
+  <div class="card text-center p-4 d-flex flex-row gap-4" style="width: 90rem;">
+    <%= image_tag("", alt: "test", class: "img-fluid rounded-start " ) %>
+    <div class="text-start">
+      <h2>Test</h2>
+      <p>Du :</p>
+      <p>Au :</p>
+      <p>Addresse : </p>
+      <p>Ce test sert à vérifier la page</p>
+    </div>
+  </div>
+  <div class="card text-center p-4 d-flex flex-row gap-4" style="width: 90rem;">
+    <%= image_tag("", alt: "test", class: "img-fluid rounded-start " ) %>
+    <div class="text-start">
+      <h2>Test</h2>
+      <p>Du :</p>
+      <p>Au :</p>
+      <p>Addresse : </p>
+      <p>Ce test sert à vérifier la page</p>
+    </div>
+  </div>
+</main>

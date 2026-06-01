@@ -1,0 +1,14 @@
+<nav class="d-flex gap-4">
+  <%= link_to "Accueil", root_path %>
+  <%= link_to "Articles", articles_index_path %>
+  <%= link_to "Actualités", actualites_index_path %>
+</nav>
+<div class="d-flex gap-4">
+  <% if user_signed_in? %>
+    <%= image_tag "", alt:"profil", class: "avatar" %>
+    <%= link_to "Déconnexion", destroy_user_session_path, data: {turbo_method: :delete} %>
+  <% else %>
+    <%= link_to "Connexion", new_user_session_path %>
+    <%= link_to "Inscription", new_user_registration_path %>
+  <% end %>
+</div>
