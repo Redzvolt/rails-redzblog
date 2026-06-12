@@ -6,20 +6,8 @@
   <div class="d-flex flex-wrap">
     <% @articles.each do |article| %>
       <div class="card" style="width: 23rem;">
-        <%= link_to image_tag("#{article.main_image}", alt: "#{article.main_image_description}" ), articles_show_path(article) %>
+        <%= link_to image_tag("#{article.main_image}", alt: "#{article.main_image_description}", class: "article_main_image_size" ), articles_show_path(article) %>
       </div>
     <% end %>
-    <div class="card" style="width: 23rem;">
-      <%= link_to image_tag("", alt: "image test" ), articles_show_path(0) %>
-    </div>
-    <div class="card" style="width: 23rem;">
-      <%= link_to image_tag("", alt: "image test" ), articles_show_path(0) %>
-    </div>
-    <div class="card" style="width: 23rem;">
-      <%= link_to image_tag("", alt: "image test" ), articles_show_path(0) %>
-    </div>
-    <div class="card" style="width: 23rem;">
-      <%= link_to image_tag("", alt: "image test" ), articles_show_path(0) %>
-    </div>
   </div>
 </main>
